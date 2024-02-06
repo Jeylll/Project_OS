@@ -87,7 +87,7 @@ namespace Project1 {
 
 
 
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::ListBox^ lstboxDisplay;
 
 	private: System::Windows::Forms::Label^ lstTitle;
@@ -103,6 +103,7 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^ txtboxAWT;
 	private: System::Windows::Forms::TextBox^ txtboxCPU;
 	private: System::Windows::Forms::Label^ lblCPU;
+	private: System::Windows::Forms::GroupBox^ groupBox2;
 
 
 
@@ -138,7 +139,6 @@ namespace Project1 {
 			this->txtboxBurst = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->btnSubmit = (gcnew System::Windows::Forms::Button());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->lstboxDisplay = (gcnew System::Windows::Forms::ListBox());
 			this->lstTitle = (gcnew System::Windows::Forms::Label());
 			this->txtboxPriority = (gcnew System::Windows::Forms::TextBox());
@@ -150,6 +150,7 @@ namespace Project1 {
 			this->txtboxAWT = (gcnew System::Windows::Forms::TextBox());
 			this->txtboxCPU = (gcnew System::Windows::Forms::TextBox());
 			this->lblCPU = (gcnew System::Windows::Forms::Label());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -234,28 +235,15 @@ namespace Project1 {
 			this->btnSubmit->UseVisualStyleBackColor = false;
 			this->btnSubmit->Click += gcnew System::EventHandler(this, &MyForm::btnSubmit_Click);
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Cursor = System::Windows::Forms::Cursors::Default;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(346, 35);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(112, 33);
-			this->label4->TabIndex = 8;
-			this->label4->Text = L"Output";
-			// 
 			// lstboxDisplay
 			// 
 			this->lstboxDisplay->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lstboxDisplay->FormattingEnabled = true;
 			this->lstboxDisplay->ItemHeight = 15;
-			this->lstboxDisplay->Location = System::Drawing::Point(352, 96);
+			this->lstboxDisplay->Location = System::Drawing::Point(378, 96);
 			this->lstboxDisplay->Name = L"lstboxDisplay";
-			this->lstboxDisplay->Size = System::Drawing::Size(719, 184);
+			this->lstboxDisplay->Size = System::Drawing::Size(719, 169);
 			this->lstboxDisplay->TabIndex = 9;
 			this->lstboxDisplay->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::lstboxDisplay_SelectedIndexChanged);
 			// 
@@ -265,7 +253,7 @@ namespace Project1 {
 			this->lstTitle->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lstTitle->ForeColor = System::Drawing::Color::White;
-			this->lstTitle->Location = System::Drawing::Point(349, 78);
+			this->lstTitle->Location = System::Drawing::Point(375, 78);
 			this->lstTitle->Name = L"lstTitle";
 			this->lstTitle->Size = System::Drawing::Size(59, 15);
 			this->lstTitle->TabIndex = 10;
@@ -309,7 +297,7 @@ namespace Project1 {
 			this->lblATT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblATT->ForeColor = System::Drawing::Color::White;
-			this->lblATT->Location = System::Drawing::Point(349, 313);
+			this->lblATT->Location = System::Drawing::Point(375, 283);
 			this->lblATT->Name = L"lblATT";
 			this->lblATT->Size = System::Drawing::Size(184, 18);
 			this->lblATT->TabIndex = 15;
@@ -322,7 +310,7 @@ namespace Project1 {
 			this->lblAWT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblAWT->ForeColor = System::Drawing::Color::White;
-			this->lblAWT->Location = System::Drawing::Point(640, 313);
+			this->lblAWT->Location = System::Drawing::Point(666, 283);
 			this->lblAWT->Name = L"lblAWT";
 			this->lblAWT->Size = System::Drawing::Size(149, 18);
 			this->lblAWT->TabIndex = 16;
@@ -332,7 +320,7 @@ namespace Project1 {
 			// 
 			this->txtboxATT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtboxATT->Location = System::Drawing::Point(352, 335);
+			this->txtboxATT->Location = System::Drawing::Point(378, 305);
 			this->txtboxATT->Name = L"txtboxATT";
 			this->txtboxATT->Size = System::Drawing::Size(181, 23);
 			this->txtboxATT->TabIndex = 17;
@@ -342,7 +330,7 @@ namespace Project1 {
 			// 
 			this->txtboxAWT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtboxAWT->Location = System::Drawing::Point(624, 335);
+			this->txtboxAWT->Location = System::Drawing::Point(650, 305);
 			this->txtboxAWT->Name = L"txtboxAWT";
 			this->txtboxAWT->Size = System::Drawing::Size(181, 23);
 			this->txtboxAWT->TabIndex = 18;
@@ -352,7 +340,7 @@ namespace Project1 {
 			// 
 			this->txtboxCPU->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtboxCPU->Location = System::Drawing::Point(890, 335);
+			this->txtboxCPU->Location = System::Drawing::Point(916, 305);
 			this->txtboxCPU->Name = L"txtboxCPU";
 			this->txtboxCPU->Size = System::Drawing::Size(181, 23);
 			this->txtboxCPU->TabIndex = 20;
@@ -365,18 +353,30 @@ namespace Project1 {
 			this->lblCPU->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblCPU->ForeColor = System::Drawing::Color::White;
-			this->lblCPU->Location = System::Drawing::Point(917, 313);
+			this->lblCPU->Location = System::Drawing::Point(943, 283);
 			this->lblCPU->Name = L"lblCPU";
 			this->lblCPU->Size = System::Drawing::Size(125, 18);
 			this->lblCPU->TabIndex = 19;
 			this->lblCPU->Text = L"CPU Utilization";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox2->ForeColor = System::Drawing::Color::White;
+			this->groupBox2->Location = System::Drawing::Point(343, 36);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(794, 319);
+			this->groupBox2->TabIndex = 21;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Output";
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->ClientSize = System::Drawing::Size(1131, 410);
+			this->ClientSize = System::Drawing::Size(1164, 410);
 			this->Controls->Add(this->txtboxCPU);
 			this->Controls->Add(this->lblCPU);
 			this->Controls->Add(this->txtboxAWT);
@@ -387,7 +387,6 @@ namespace Project1 {
 			this->Controls->Add(this->lblPriority);
 			this->Controls->Add(this->lstTitle);
 			this->Controls->Add(this->lstboxDisplay);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->btnSubmit);
 			this->Controls->Add(this->txtboxBurst);
 			this->Controls->Add(this->label3);
@@ -396,6 +395,7 @@ namespace Project1 {
 			this->Controls->Add(this->cbbAlgo);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->groupBox2);
 			this->ForeColor = System::Drawing::Color::Cornsilk;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
@@ -534,7 +534,6 @@ namespace Project1 {
 
 			   // Sort processes based on arrival time
 			   sort(processes.begin(), processes.end(), compareArrival);
-
 			   // Calculate various metrics for each process
 			   for (int i = 0; i < numProcesses; i++) {
 				   processes[i].startTime = (i == 0) ? processes[i].arrivalTime : max(processes[i - 1].completionTime, processes[i].arrivalTime);
@@ -572,7 +571,7 @@ namespace Project1 {
 
 			   txtboxATT->Text = avgTurnaroundTime.ToString("F2");
 			   txtboxAWT->Text = avgWaitingTime.ToString("F2");
-			   txtboxCPU->Text = cpuUtilization.ToString("F2");
+			   txtboxCPU->Text = cpuUtilization.ToString("F2") + "%";
 			   
 		   }
 		   void srtf(String^ txtArrive, String^ txtBurst) {
@@ -697,7 +696,7 @@ namespace Project1 {
 
 			   txtboxATT->Text = avgTurnaroundTime.ToString("F2");
 			   txtboxAWT->Text = avgWaitingTime.ToString("F2");
-			   txtboxCPU->Text = cpuUtilization.ToString("F2");
+			   txtboxCPU->Text = cpuUtilization.ToString("F2") + "%";
 		   }
 		   void npp(String^ txtArrive, String^ txtBurst, String^ txtPriority) {
 			   int numProcesses;
@@ -858,7 +857,7 @@ namespace Project1 {
 
 			   txtboxATT->Text = avgTurnaroundTime.ToString("F2");
 			   txtboxAWT->Text = avgWaitingTime.ToString("F2");
-			   txtboxCPU->Text = cpuUtilization.ToString("F2");
+			   txtboxCPU->Text = cpuUtilization.ToString("F2") + "%";
 		   }
 
 private: System::Void lstboxDisplay_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
