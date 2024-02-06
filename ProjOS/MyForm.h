@@ -95,6 +95,22 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ lblPriority;
 
 	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Label^ lblATT;
+	private: System::Windows::Forms::Label^ lblAWT;
+
+
+	private: System::Windows::Forms::TextBox^ txtboxATT;
+	private: System::Windows::Forms::TextBox^ txtboxAWT;
+	private: System::Windows::Forms::TextBox^ txtboxCPU;
+	private: System::Windows::Forms::Label^ lblCPU;
+
+
+
+
+
+
+
+
 
 
 
@@ -128,6 +144,12 @@ namespace Project1 {
 			this->txtboxPriority = (gcnew System::Windows::Forms::TextBox());
 			this->lblPriority = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->lblATT = (gcnew System::Windows::Forms::Label());
+			this->lblAWT = (gcnew System::Windows::Forms::Label());
+			this->txtboxATT = (gcnew System::Windows::Forms::TextBox());
+			this->txtboxAWT = (gcnew System::Windows::Forms::TextBox());
+			this->txtboxCPU = (gcnew System::Windows::Forms::TextBox());
+			this->lblCPU = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -135,7 +157,7 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(92, 80);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(59, 15);
@@ -164,7 +186,7 @@ namespace Project1 {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(95, 139);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(72, 15);
@@ -173,6 +195,7 @@ namespace Project1 {
 			// 
 			// txtboxArrival
 			// 
+			this->txtboxArrival->AccessibleDescription = L"";
 			this->txtboxArrival->Location = System::Drawing::Point(95, 156);
 			this->txtboxArrival->Name = L"txtboxArrival";
 			this->txtboxArrival->Size = System::Drawing::Size(185, 20);
@@ -190,7 +213,7 @@ namespace Project1 {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(95, 200);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(63, 13);
@@ -217,7 +240,7 @@ namespace Project1 {
 			this->label4->Cursor = System::Windows::Forms::Cursors::Default;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(346, 35);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(112, 33);
@@ -232,15 +255,16 @@ namespace Project1 {
 			this->lstboxDisplay->ItemHeight = 15;
 			this->lstboxDisplay->Location = System::Drawing::Point(352, 96);
 			this->lstboxDisplay->Name = L"lstboxDisplay";
-			this->lstboxDisplay->Size = System::Drawing::Size(802, 259);
+			this->lstboxDisplay->Size = System::Drawing::Size(719, 184);
 			this->lstboxDisplay->TabIndex = 9;
+			this->lstboxDisplay->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::lstboxDisplay_SelectedIndexChanged);
 			// 
 			// lstTitle
 			// 
 			this->lstTitle->AutoSize = true;
 			this->lstTitle->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lstTitle->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->lstTitle->ForeColor = System::Drawing::Color::White;
 			this->lstTitle->Location = System::Drawing::Point(349, 78);
 			this->lstTitle->Name = L"lstTitle";
 			this->lstTitle->Size = System::Drawing::Size(59, 15);
@@ -259,7 +283,7 @@ namespace Project1 {
 			this->lblPriority->AutoSize = true;
 			this->lblPriority->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblPriority->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->lblPriority->ForeColor = System::Drawing::Color::White;
 			this->lblPriority->Location = System::Drawing::Point(95, 256);
 			this->lblPriority->Name = L"lblPriority";
 			this->lblPriority->Size = System::Drawing::Size(45, 13);
@@ -270,6 +294,7 @@ namespace Project1 {
 			// 
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->groupBox1->ForeColor = System::Drawing::Color::White;
 			this->groupBox1->Location = System::Drawing::Point(61, 36);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(254, 319);
@@ -277,12 +302,87 @@ namespace Project1 {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Input";
 			// 
+			// lblATT
+			// 
+			this->lblATT->AutoSize = true;
+			this->lblATT->Cursor = System::Windows::Forms::Cursors::Default;
+			this->lblATT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblATT->ForeColor = System::Drawing::Color::White;
+			this->lblATT->Location = System::Drawing::Point(349, 313);
+			this->lblATT->Name = L"lblATT";
+			this->lblATT->Size = System::Drawing::Size(184, 18);
+			this->lblATT->TabIndex = 15;
+			this->lblATT->Text = L"Ave. Turnaround Time";
+			// 
+			// lblAWT
+			// 
+			this->lblAWT->AutoSize = true;
+			this->lblAWT->Cursor = System::Windows::Forms::Cursors::Default;
+			this->lblAWT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblAWT->ForeColor = System::Drawing::Color::White;
+			this->lblAWT->Location = System::Drawing::Point(640, 313);
+			this->lblAWT->Name = L"lblAWT";
+			this->lblAWT->Size = System::Drawing::Size(149, 18);
+			this->lblAWT->TabIndex = 16;
+			this->lblAWT->Text = L"Ave. Waiting Time";
+			// 
+			// txtboxATT
+			// 
+			this->txtboxATT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtboxATT->Location = System::Drawing::Point(352, 335);
+			this->txtboxATT->Name = L"txtboxATT";
+			this->txtboxATT->Size = System::Drawing::Size(181, 23);
+			this->txtboxATT->TabIndex = 17;
+			this->txtboxATT->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// txtboxAWT
+			// 
+			this->txtboxAWT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtboxAWT->Location = System::Drawing::Point(624, 335);
+			this->txtboxAWT->Name = L"txtboxAWT";
+			this->txtboxAWT->Size = System::Drawing::Size(181, 23);
+			this->txtboxAWT->TabIndex = 18;
+			this->txtboxAWT->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// txtboxCPU
+			// 
+			this->txtboxCPU->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txtboxCPU->Location = System::Drawing::Point(890, 335);
+			this->txtboxCPU->Name = L"txtboxCPU";
+			this->txtboxCPU->Size = System::Drawing::Size(181, 23);
+			this->txtboxCPU->TabIndex = 20;
+			this->txtboxCPU->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// lblCPU
+			// 
+			this->lblCPU->AutoSize = true;
+			this->lblCPU->Cursor = System::Windows::Forms::Cursors::Default;
+			this->lblCPU->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblCPU->ForeColor = System::Drawing::Color::White;
+			this->lblCPU->Location = System::Drawing::Point(917, 313);
+			this->lblCPU->Name = L"lblCPU";
+			this->lblCPU->Size = System::Drawing::Size(125, 18);
+			this->lblCPU->TabIndex = 19;
+			this->lblCPU->Text = L"CPU Utilization";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(1254, 410);
+			this->BackColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->ClientSize = System::Drawing::Size(1131, 410);
+			this->Controls->Add(this->txtboxCPU);
+			this->Controls->Add(this->lblCPU);
+			this->Controls->Add(this->txtboxAWT);
+			this->Controls->Add(this->txtboxATT);
+			this->Controls->Add(this->lblAWT);
+			this->Controls->Add(this->lblATT);
 			this->Controls->Add(this->txtboxPriority);
 			this->Controls->Add(this->lblPriority);
 			this->Controls->Add(this->lstTitle);
@@ -314,6 +414,12 @@ namespace Project1 {
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		lstboxDisplay->Hide();
+		txtboxATT->Hide();
+		txtboxAWT->Hide();
+		txtboxCPU->Hide();
+		lblATT->Hide();
+		lblAWT->Hide();
+		lblCPU->Hide();
 	}
 
 	private: System::Void cbbAlgo_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -335,29 +441,29 @@ namespace Project1 {
 		lstboxDisplay->Items->Clear();
 		lstboxDisplay->Show();
 		if (cbbAlgo->Text == "FCFS (First Come First Serve)") {
-			if (txtboxArrival->Text->Length != txtboxBurst->Text->Length) {
-				MessageBox::Show("Invalid Input.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			}
-			else {
-				lstboxDisplay->Size = System::Drawing::Size(720, 259);
-				fcfs(txtboxArrival->Text, txtboxBurst->Text);
-			}
+			txtboxATT->Show();
+			txtboxAWT->Show();
+			txtboxCPU->Show();
+			lblATT->Show();
+			lblAWT->Show();
+			lblCPU->Show();
+			fcfs(txtboxArrival->Text, txtboxBurst->Text);
 		} else if (cbbAlgo->Text == "SRTF (Shortest Remaining Time First)") {
-			if (txtboxArrival->Text->Length != txtboxBurst->Text->Length) {
-				MessageBox::Show("Invalid Input.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			}
-			else {
-				lstboxDisplay->Size = System::Drawing::Size(720, 259);
-				srtf(txtboxArrival->Text, txtboxBurst->Text);
-			}
+			txtboxATT->Show();
+			txtboxAWT->Show();
+			txtboxCPU->Show();
+			lblATT->Show();
+			lblAWT->Show();
+			lblCPU->Show();
+			srtf(txtboxArrival->Text, txtboxBurst->Text);
 		} else {
-			if ((txtboxArrival->Text->Length != txtboxBurst->Text->Length) || (txtboxArrival->Text->Length != txtboxPriority->Text->Length) || (txtboxBurst->Text->Length != txtboxPriority->Text->Length)) {
-				MessageBox::Show("Invalid Input.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			}
-			else {
-				lstboxDisplay->Size = System::Drawing::Size(802, 259);
-				npp(txtboxArrival->Text, txtboxBurst->Text, txtboxPriority->Text);
-			}
+			lblATT->Show();
+			lblAWT->Show();
+			lblCPU->Show();
+			txtboxATT->Show();
+			txtboxAWT->Show();
+			txtboxCPU->Show();
+			npp(txtboxArrival->Text, txtboxBurst->Text, txtboxPriority->Text);
 		}
 		
 
@@ -402,6 +508,11 @@ namespace Project1 {
 				   if (isss >> std::ws && isss.peek() == ',') {
 					   isss.ignore();
 				   }
+			   }
+
+			   if (at.size() != bt.size()) {
+				   MessageBox::Show("Invalid Input.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				   return;
 			   }
 
 			   // Validation to check if the number of bt and at is the same, if not exit
@@ -459,13 +570,10 @@ namespace Project1 {
 				   lstboxDisplay->Items->Add(String::Format(stdDisplay, "               ", p.id, "\t                    ", p.arrivalTime, "\t              ", p.burstTime, "\t\t          ", p.completionTime, "\t\t               ", p.turnaroundTime, "\t\t                    ", p.waitingTime, "\t\t", " "));
 			   }
 
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(String::Format(ave, "Average Turnaround Time = ", avgTurnaroundTime.ToString("F2"), " "));
-			   lstboxDisplay->Items->Add(String::Format(ave, "Average Waiting Time = ", avgWaitingTime.ToString("F2"), " "));
-			   //lstboxDisplay->Items->Add(String::Format(ave, "Average Response Time = ", avgResponseTime.ToString("F2"), " "));
-			   lstboxDisplay->Items->Add(String::Format(ave, "CPU Utilization = ", cpuUtilization.ToString("F2"), "%"));
+			   txtboxATT->Text = avgTurnaroundTime.ToString("F2");
+			   txtboxAWT->Text = avgWaitingTime.ToString("F2");
+			   txtboxCPU->Text = cpuUtilization.ToString("F2");
+			   
 		   }
 		   void srtf(String^ txtArrive, String^ txtBurst) {
 			   int numProcesses;
@@ -512,8 +620,8 @@ namespace Project1 {
 
 			   // Validation to check if the number of bt and at is the same, if not exit
 			   if (at.size() != bt.size()) {
-				   cout << "Invalid Inputs, please make sure the number of at and bt is the same.";
-				   exit(0);
+				   MessageBox::Show("Invalid Input.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				   return;
 			   }
 
 			   // Initialize the number of processes
@@ -587,14 +695,9 @@ namespace Project1 {
 				   lstboxDisplay->Items->Add(String::Format(stdDisplay, "               ", p.id, "\t                    ", p.arrivalTime, "\t              ", p.burstTime, "\t\t          ", p.completionTime, "\t\t               ", p.turnaroundTime, "\t\t                    ", p.waitingTime, "\t\t", " "));
 			   }
 
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(String::Format(ave, "Average Turnaround Time = ", avgTurnaroundTime.ToString("F2"), " "));
-			   lstboxDisplay->Items->Add(String::Format(ave, "Average Waiting Time = ", avgWaitingTime.ToString("F2"), " "));
-			   lstboxDisplay->Items->Add(String::Format(ave, "CPU Utilization = ", cpuUtilization.ToString("F2"), "%"));
-
-
+			   txtboxATT->Text = avgTurnaroundTime.ToString("F2");
+			   txtboxAWT->Text = avgWaitingTime.ToString("F2");
+			   txtboxCPU->Text = cpuUtilization.ToString("F2");
 		   }
 		   void npp(String^ txtArrive, String^ txtBurst, String^ txtPriority) {
 			   int numProcesses;
@@ -607,7 +710,7 @@ namespace Project1 {
 			   int totalWaitingTime = 0;
 			   int totalResponseTime = 0;
 			   int totalIdleTime = 0;
-			   float throughput;
+			   float throughput;	
 			   vector<int> isCompleted;
 			   String ^tempBurstTime, ^tempArrivalTime, ^tempPriority;
 
@@ -659,6 +762,11 @@ namespace Project1 {
 				   if (issss >> std::ws && issss.peek() == ',') {
 					   issss.ignore();
 				   }
+			   }
+			  
+			   if (arrivalTime.size() != burstTime.size() || arrivalTime.size() != priority.size() || burstTime.size() != priority.size()) {
+				   MessageBox::Show("Invalid Input.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				   return;
 			   }
 
 			   // Initialize the number of processes
@@ -742,25 +850,18 @@ namespace Project1 {
 			   // Display process information in tabular format
 			   lstboxDisplay->Items->Clear();
 			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(String::Format(stdDetailsNpp, "PID", "Arrival Time", "Burst Time", "Priority","Completion Time", "Turnaround Time", "Waiting Time"));
-			   lstboxDisplay->Items->Add(" ");
+			   lstboxDisplay->Items->Add(String::Format(stdDetails, "PID", "Arrival Time", "Burst Time", "Completion Time", "Turnaround Time", "Waiting Time", "Priority"));			   lstboxDisplay->Items->Add(" ");
 
-			   int counter = 0;
 			   for (const Process& p : processes) {
-				   counter++;
-				   lstboxDisplay->Items->Add(String::Format(stdDisplay, "               ", p.id, "\t                    ", p.arrivalTime, "\t              ", p.burstTime, "\t\t  ", p.priority, "\t                ", p.completionTime, "\t\t                    ", p.turnaroundTime, "\t                          ", p.waitingTime));
-				   if (counter > 3) {
-					   String^ stdDisplay = "{0,0}{1,0}{2,0}{3,0}{4, 0}{5, 0}{6, 0}{7,0}{8,0}{9,0}{10,0}{11,10}{12,0}{13, 0}";
-				   }
+				   lstboxDisplay->Items->Add(String::Format(stdDisplay, "               ", p.id, "\t                    ", p.arrivalTime, "\t              ", p.burstTime, "\t\t          ", p.completionTime, "\t\t               ", p.turnaroundTime, "\t\t                    ", p.waitingTime, "\t\t", " "));
 			   }
 
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(" ");
-			   lstboxDisplay->Items->Add(String::Format(ave, "Average Turnaround Time = ", avgTurnaroundTime.ToString("F2"), " "));
-			   lstboxDisplay->Items->Add(String::Format(ave, "Average Waiting Time = ", avgWaitingTime.ToString("F2"), " "));
-			   lstboxDisplay->Items->Add(String::Format(ave, "CPU Utilization = ", cpuUtilization.ToString("F2"), "%"));
+			   txtboxATT->Text = avgTurnaroundTime.ToString("F2");
+			   txtboxAWT->Text = avgWaitingTime.ToString("F2");
+			   txtboxCPU->Text = cpuUtilization.ToString("F2");
 		   }
 
+private: System::Void lstboxDisplay_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
