@@ -103,7 +103,13 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^ txtboxAWT;
 	private: System::Windows::Forms::TextBox^ txtboxCPU;
 	private: System::Windows::Forms::Label^ lblCPU;
-	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::GroupBox^ groupOutput;
+
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ helpToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ userManualToolStripMenuItem;
+	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -123,7 +129,7 @@ namespace Project1 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -132,6 +138,7 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->cbbAlgo = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -150,7 +157,12 @@ namespace Project1 {
 			this->txtboxAWT = (gcnew System::Windows::Forms::TextBox());
 			this->txtboxCPU = (gcnew System::Windows::Forms::TextBox());
 			this->lblCPU = (gcnew System::Windows::Forms::Label());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupOutput = (gcnew System::Windows::Forms::GroupBox());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->userManualToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -159,7 +171,7 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(92, 80);
+			this->label1->Location = System::Drawing::Point(72, 86);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(59, 15);
 			this->label1->TabIndex = 0;
@@ -176,7 +188,7 @@ namespace Project1 {
 				L"FCFS (First Come First Serve)", L"NPP (Non-Preemptive Priority)",
 					L"SRTF (Shortest Remaining Time First)"
 			});
-			this->cbbAlgo->Location = System::Drawing::Point(95, 96);
+			this->cbbAlgo->Location = System::Drawing::Point(75, 102);
 			this->cbbAlgo->Name = L"cbbAlgo";
 			this->cbbAlgo->Size = System::Drawing::Size(185, 21);
 			this->cbbAlgo->TabIndex = 1;
@@ -188,7 +200,7 @@ namespace Project1 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(95, 139);
+			this->label2->Location = System::Drawing::Point(75, 145);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(72, 15);
 			this->label2->TabIndex = 2;
@@ -197,14 +209,14 @@ namespace Project1 {
 			// txtboxArrival
 			// 
 			this->txtboxArrival->AccessibleDescription = L"";
-			this->txtboxArrival->Location = System::Drawing::Point(95, 156);
+			this->txtboxArrival->Location = System::Drawing::Point(75, 162);
 			this->txtboxArrival->Name = L"txtboxArrival";
 			this->txtboxArrival->Size = System::Drawing::Size(185, 20);
 			this->txtboxArrival->TabIndex = 3;
 			// 
 			// txtboxBurst
 			// 
-			this->txtboxBurst->Location = System::Drawing::Point(95, 217);
+			this->txtboxBurst->Location = System::Drawing::Point(75, 223);
 			this->txtboxBurst->Name = L"txtboxBurst";
 			this->txtboxBurst->Size = System::Drawing::Size(185, 20);
 			this->txtboxBurst->TabIndex = 5;
@@ -215,7 +227,7 @@ namespace Project1 {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(95, 200);
+			this->label3->Location = System::Drawing::Point(75, 206);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(63, 13);
 			this->label3->TabIndex = 4;
@@ -223,11 +235,12 @@ namespace Project1 {
 			// 
 			// btnSubmit
 			// 
-			this->btnSubmit->BackColor = System::Drawing::Color::DeepSkyBlue;
+			this->btnSubmit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->btnSubmit->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnSubmit->ForeColor = System::Drawing::Color::White;
-			this->btnSubmit->Location = System::Drawing::Point(95, 313);
+			this->btnSubmit->Location = System::Drawing::Point(75, 319);
 			this->btnSubmit->Name = L"btnSubmit";
 			this->btnSubmit->Size = System::Drawing::Size(75, 23);
 			this->btnSubmit->TabIndex = 6;
@@ -241,11 +254,10 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->lstboxDisplay->FormattingEnabled = true;
 			this->lstboxDisplay->ItemHeight = 15;
-			this->lstboxDisplay->Location = System::Drawing::Point(378, 96);
+			this->lstboxDisplay->Location = System::Drawing::Point(358, 102);
 			this->lstboxDisplay->Name = L"lstboxDisplay";
-			this->lstboxDisplay->Size = System::Drawing::Size(719, 169);
+			this->lstboxDisplay->Size = System::Drawing::Size(719, 229);
 			this->lstboxDisplay->TabIndex = 9;
-			this->lstboxDisplay->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::lstboxDisplay_SelectedIndexChanged);
 			// 
 			// lstTitle
 			// 
@@ -253,7 +265,7 @@ namespace Project1 {
 			this->lstTitle->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lstTitle->ForeColor = System::Drawing::Color::White;
-			this->lstTitle->Location = System::Drawing::Point(375, 78);
+			this->lstTitle->Location = System::Drawing::Point(355, 84);
 			this->lstTitle->Name = L"lstTitle";
 			this->lstTitle->Size = System::Drawing::Size(59, 15);
 			this->lstTitle->TabIndex = 10;
@@ -261,7 +273,7 @@ namespace Project1 {
 			// 
 			// txtboxPriority
 			// 
-			this->txtboxPriority->Location = System::Drawing::Point(95, 273);
+			this->txtboxPriority->Location = System::Drawing::Point(75, 279);
 			this->txtboxPriority->Name = L"txtboxPriority";
 			this->txtboxPriority->Size = System::Drawing::Size(185, 20);
 			this->txtboxPriority->TabIndex = 12;
@@ -272,7 +284,7 @@ namespace Project1 {
 			this->lblPriority->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblPriority->ForeColor = System::Drawing::Color::White;
-			this->lblPriority->Location = System::Drawing::Point(95, 256);
+			this->lblPriority->Location = System::Drawing::Point(75, 262);
 			this->lblPriority->Name = L"lblPriority";
 			this->lblPriority->Size = System::Drawing::Size(45, 13);
 			this->lblPriority->TabIndex = 11;
@@ -283,7 +295,7 @@ namespace Project1 {
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox1->ForeColor = System::Drawing::Color::White;
-			this->groupBox1->Location = System::Drawing::Point(61, 36);
+			this->groupBox1->Location = System::Drawing::Point(41, 42);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(254, 319);
 			this->groupBox1->TabIndex = 14;
@@ -297,7 +309,7 @@ namespace Project1 {
 			this->lblATT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblATT->ForeColor = System::Drawing::Color::White;
-			this->lblATT->Location = System::Drawing::Point(375, 283);
+			this->lblATT->Location = System::Drawing::Point(355, 289);
 			this->lblATT->Name = L"lblATT";
 			this->lblATT->Size = System::Drawing::Size(184, 18);
 			this->lblATT->TabIndex = 15;
@@ -310,7 +322,7 @@ namespace Project1 {
 			this->lblAWT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblAWT->ForeColor = System::Drawing::Color::White;
-			this->lblAWT->Location = System::Drawing::Point(666, 283);
+			this->lblAWT->Location = System::Drawing::Point(646, 289);
 			this->lblAWT->Name = L"lblAWT";
 			this->lblAWT->Size = System::Drawing::Size(149, 18);
 			this->lblAWT->TabIndex = 16;
@@ -320,7 +332,7 @@ namespace Project1 {
 			// 
 			this->txtboxATT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtboxATT->Location = System::Drawing::Point(378, 305);
+			this->txtboxATT->Location = System::Drawing::Point(358, 311);
 			this->txtboxATT->Name = L"txtboxATT";
 			this->txtboxATT->Size = System::Drawing::Size(181, 23);
 			this->txtboxATT->TabIndex = 17;
@@ -330,7 +342,7 @@ namespace Project1 {
 			// 
 			this->txtboxAWT->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtboxAWT->Location = System::Drawing::Point(650, 305);
+			this->txtboxAWT->Location = System::Drawing::Point(630, 311);
 			this->txtboxAWT->Name = L"txtboxAWT";
 			this->txtboxAWT->Size = System::Drawing::Size(181, 23);
 			this->txtboxAWT->TabIndex = 18;
@@ -340,7 +352,7 @@ namespace Project1 {
 			// 
 			this->txtboxCPU->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtboxCPU->Location = System::Drawing::Point(916, 305);
+			this->txtboxCPU->Location = System::Drawing::Point(896, 311);
 			this->txtboxCPU->Name = L"txtboxCPU";
 			this->txtboxCPU->Size = System::Drawing::Size(181, 23);
 			this->txtboxCPU->TabIndex = 20;
@@ -353,30 +365,65 @@ namespace Project1 {
 			this->lblCPU->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblCPU->ForeColor = System::Drawing::Color::White;
-			this->lblCPU->Location = System::Drawing::Point(943, 283);
+			this->lblCPU->Location = System::Drawing::Point(923, 289);
 			this->lblCPU->Name = L"lblCPU";
 			this->lblCPU->Size = System::Drawing::Size(125, 18);
 			this->lblCPU->TabIndex = 19;
 			this->lblCPU->Text = L"CPU Utilization";
 			// 
-			// groupBox2
+			// groupOutput
 			// 
-			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->groupOutput->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox2->ForeColor = System::Drawing::Color::White;
-			this->groupBox2->Location = System::Drawing::Point(343, 36);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(794, 319);
-			this->groupBox2->TabIndex = 21;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Output";
+			this->groupOutput->ForeColor = System::Drawing::Color::White;
+			this->groupOutput->Location = System::Drawing::Point(323, 42);
+			this->groupOutput->Name = L"groupOutput";
+			this->groupOutput->Size = System::Drawing::Size(794, 319);
+			this->groupOutput->TabIndex = 21;
+			this->groupOutput->TabStop = false;
+			this->groupOutput->Text = L"Output";
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->helpToolStripMenuItem });
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(1164, 24);
+			this->menuStrip1->TabIndex = 22;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// helpToolStripMenuItem
+			// 
+			this->helpToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->helpToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->userManualToolStripMenuItem });
+			this->helpToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->helpToolStripMenuItem->ForeColor = System::Drawing::Color::White;
+			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(46, 20);
+			this->helpToolStripMenuItem->Text = L"Help";
+			// 
+			// userManualToolStripMenuItem
+			// 
+			this->userManualToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->userManualToolStripMenuItem->ForeColor = System::Drawing::Color::White;
+			this->userManualToolStripMenuItem->Name = L"userManualToolStripMenuItem";
+			this->userManualToolStripMenuItem->Size = System::Drawing::Size(146, 22);
+			this->userManualToolStripMenuItem->Text = L"User Manual";
+			this->userManualToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::userManualToolStripMenuItem_Click);
+			// 
+			// contextMenuStrip1
+			// 
+			this->contextMenuStrip1->Name = L"contextMenuStrip1";
+			this->contextMenuStrip1->Size = System::Drawing::Size(61, 4);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->ClientSize = System::Drawing::Size(1164, 410);
+			this->ClientSize = System::Drawing::Size(1164, 402);
 			this->Controls->Add(this->txtboxCPU);
 			this->Controls->Add(this->lblCPU);
 			this->Controls->Add(this->txtboxAWT);
@@ -395,11 +442,15 @@ namespace Project1 {
 			this->Controls->Add(this->cbbAlgo);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->groupBox2);
+			this->Controls->Add(this->groupOutput);
+			this->Controls->Add(this->menuStrip1);
 			this->ForeColor = System::Drawing::Color::Cornsilk;
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -420,26 +471,32 @@ namespace Project1 {
 		lblATT->Hide();
 		lblAWT->Hide();
 		lblCPU->Hide();
+		lstTitle->Hide();
 	}
 
 	private: System::Void cbbAlgo_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
+		
 		lstTitle->Text = cbbAlgo->Text;
 		txtboxPriority->Hide();
 		lblPriority->Hide();
 		
-		this->btnSubmit->Location = System::Drawing::Point(95, 256);
+		this->btnSubmit->Location = System::Drawing::Point(75, 256);
 
 		if (cbbAlgo->Text == "NPP (Non-Preemptive Priority)") {
 			txtboxPriority->Show();
 			lblPriority->Show();
-			btnSubmit->Location = System::Drawing::Point(95, 313);
+			btnSubmit->Location = System::Drawing::Point(75, 319);
 		}
 	}
 
 	private: System::Void btnSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
+		lstTitle->Show();
+		groupOutput->Text = "Output";
+		lstboxDisplay->Size = System::Drawing::Size(719, 169);
 		lstboxDisplay->Items->Clear();
 		lstboxDisplay->Show();
+
 		if (cbbAlgo->Text == "FCFS (First Come First Serve)") {
 			txtboxATT->Show();
 			txtboxAWT->Show();
@@ -468,7 +525,7 @@ namespace Project1 {
 		
 
 	}
-
+	
 		   void fcfs(String^ txtArrive, String^ txtBurst) {
 			   // Declare variables to store process information and various metrics
 			   int numProcesses;
@@ -723,7 +780,6 @@ namespace Project1 {
 			   vector<int> priority;
 
 			   // Read integers separated by commas using a for loop
-			   char comma;  // Variable to store the comma
 			   for (int number; iss >> number || (iss.eof() && arrivalTime.empty());) {
 				   arrivalTime.push_back(number);
 
@@ -860,7 +916,68 @@ namespace Project1 {
 			   txtboxCPU->Text = cpuUtilization.ToString("F2") + "%";
 		   }
 
-private: System::Void lstboxDisplay_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void userManualToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		lstboxDisplay->Size = System::Drawing::Size(719, 229);
+		groupOutput->Text = "User Manual";
+		lblATT->Hide();
+		lblAWT->Hide();
+		lblCPU->Hide();
+		txtboxATT->Hide();
+		txtboxAWT->Hide();
+		txtboxCPU->Hide();
+		lstTitle->Hide();
+		lstboxDisplay->Items->Clear();
+		lstboxDisplay->Show();
+		lstboxDisplay->Items->Add("1. Introduction"); 
+		lstboxDisplay->Items->Add("     Welcome to the Black Disk System!");
+		lstboxDisplay->Items->Add("     This system is designed to help you simulate various process scheduling algorithms and analyze their ");
+		lstboxDisplay->Items->Add("     performance. Whether you're a student, researcher, or professional in the field of computer systems,");
+		lstboxDisplay->Items->Add("     this tool will assist you in understanding and comparing process scheduling algorithms.");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("2. Usage");
+		lstboxDisplay->Items->Add("     Using the process Scheduling System is straightforward. Follow these general steps:");
+		lstboxDisplay->Items->Add("     a. Launch the executable file.");
+		lstboxDisplay->Items->Add("     b. Choose the process scheduling algorithm you want to simulate from the provided options.");
+		lstboxDisplay->Items->Add("     c. Enter the input parameters such as arrival time and burst time for the process requests.");
+		lstboxDisplay->Items->Add("     d. Click the \"Submit\" button to initiate the simulation.");
+		lstboxDisplay->Items->Add("     e. View the simulation results and analysis in the output display.");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("3. Supported Algorithms");
+		lstboxDisplay->Items->Add("     The process Scheduling System supports the simulation of various process scheduling algorithms");
+		lstboxDisplay->Items->Add("     including:");
+		lstboxDisplay->Items->Add("     a. First Come First Serve (FCFS)");
+		lstboxDisplay->Items->Add("     b. Shortest Remaining Time First (SRTF)");
+		lstboxDisplay->Items->Add("     c. Non Preemptive Priority (NPP)");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("4. Input Parameters");
+		lstboxDisplay->Items->Add("     When using the Process Scheduling System, you'll need to provide the following input parameters:");
+		lstboxDisplay->Items->Add("     a. Arrival Time: The time at which a disk request arrives.");
+		lstboxDisplay->Items->Add("     b. Burst Time: The time required to service a disk request.");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("5. Output Display");
+		lstboxDisplay->Items->Add("     The output display of the Process Scheduling System presents the simulation results and analysis.");
+		lstboxDisplay->Items->Add("     You'll be able to see:");
+		lstboxDisplay->Items->Add("     -> Sequence of process requests serviced by the selected algorithm.");
+		lstboxDisplay->Items->Add("     -> Calculation of Completion Time and other relevant metrics depending on the selected algorithm.");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("6. Examples");
+		lstboxDisplay->Items->Add("     Here are some example steps to run the Disk Scheduling System:");
+		lstboxDisplay->Items->Add("     a. Choose the \"FCFS\" algorithm.");
+		lstboxDisplay->Items->Add("     b. Enter the arrival time and burst time for each disk request.");
+		lstboxDisplay->Items->Add("     c. Click the \"Solve\" button.");
+		lstboxDisplay->Items->Add("     d. View the simulation results and analysis in the output display.");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("7. Troubleshooting");
+		lstboxDisplay->Items->Add("     If you encounter any issues while using the Disk Scheduling System, refer to the following");
+		lstboxDisplay->Items->Add("     troubleshooting steps:");
+		lstboxDisplay->Items->Add("     -> Check that all dependencies are installed correctly.");
+		lstboxDisplay->Items->Add("     -> Ensure that the input parameters are provided in the correct format.");
+		lstboxDisplay->Items->Add("     -> Verify that the process request sequence does not contain any errors.");
+		lstboxDisplay->Items->Add(" ");
+		lstboxDisplay->Items->Add("8. Contact Information");
+		lstboxDisplay->Items->Add("     If you require further assistance or have any questions not addressed in this manual,");
+		lstboxDisplay->Items->Add("     please contact our support team at support: delacruzjoren@gmail.com.");
+		lstboxDisplay->Items->Add(" ");
+	}
 };
 }
